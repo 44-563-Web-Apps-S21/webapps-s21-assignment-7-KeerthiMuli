@@ -30,8 +30,17 @@
         document.getElementById('target').innerHTML = "Your time " + myTime;
         console.log(myTime);
     }
-
     function startTime() {
+            var random = Math.floor(Math.random() * 10) + 2;
+            console.log(random)
+            for (let i = 0; i < random+1; i++) {
+                setTimeout(function () {
+                    document.getElementById('countdown').innerHTML = i;
+                    console.log(i)
+                }, (random - i) * 1000)
+            }
+
+    /*function startTime() {
         var countdown ;
         console.log(countdown);
         
@@ -41,14 +50,14 @@
             document.getElementById("countdown").innerHTML = i
           }, ((3 - i) * 1000), i);
   
-        }
+        }*/
         setTimeout(function() {
             if (myTime == undefined) {
                 document.getElementById('target').innerHTML = "Too Slow";
             } else {
                 var buttonTime = Date.now();
-                diff = buttonTime - myTime;
-                document.getElementById('elapsed').innerHTML = "Time was " + diff;
+                elapsedTime = buttonTime - myTime;
+                document.getElementById('elapsed').innerHTML = "Time was " + elapsedTime;
                 document.getElementById('elapsed').style.color = "purple";
                 document.getElementById('target').style.color = "Red";
             }
