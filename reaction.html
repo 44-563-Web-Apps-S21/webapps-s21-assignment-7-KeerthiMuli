@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome to My Reaction Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+    <h1 class="text-danger">Keerthi Muli reaction timer</h1>
+    <div class="container">
+        
+        <p id="target">Your time</p>
+        <p id="countdown">Count</p>
+   
+        <button type="button" class="btn btn-secondary" onclick="startTime()">Start Timer</button>
+        <button type="button" class="btn btn-danger" onclick="recordReact()">React Now</button>
+        <p id="elapsed">Elapsed time</p>
+      </div>
+  
+    <script> 
+    var myTime;
+
+    function recordReact() {
+        myTime = Date.now();
+        document.getElementById('target').innerHTML = "Your time " + myTime;
+        console.log(myTime);
+    }
+
+    function startTime() {
+        var countdown ;
+        console.log(countdown);
+        
+        for (var i = 0; i < 3; i++) {
+  
+          setTimeout(function (i) {
+            document.getElementById("countdown").innerHTML = i
+          }, ((3 - i) * 1000), i);
+  
+        }
+        setTimeout(function() {
+            if (myTime == undefined) {
+                document.getElementById('target').innerHTML = "Too Slow";
+            } else {
+                var buttonTime = Date.now();
+                diff = buttonTime - myTime;
+                document.getElementById('elapsed').innerHTML = "Time was " + diff;
+                document.getElementById('elapsed').style.color = "purple";
+                document.getElementById('target').style.color = "Red";
+            }
+        }, 3000);
+    }
+
+    function buttonPress1() {
+        setTimeout(function() {
+            document.getElementById('target').style.color = "red"
+        }, 3000)
+    }
+
+    function buttonPress2() {
+        setTimeout(() => {
+            document.getElementById('target').style.color = "red"
+        }, 3000)
+    }
+    </script>
+      </body>
+      </html>
