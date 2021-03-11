@@ -59,7 +59,7 @@
         var listyItems = document.getElementsByClassName("listy");
         len = listyItems.length;
         var r = 0;
-        if (listyItems.length > 8) {
+        if (len > 8) {
             for (var k = 0; k < 8; k++) {
                 if (listyItems[k].innerHTML == element.innerHTML) {
                     listyItems[k].remove();
