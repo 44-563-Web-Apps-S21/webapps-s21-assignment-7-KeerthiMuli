@@ -59,7 +59,7 @@
         var listyItems = document.getElementsByClassName("listy");
         len = listyItems.length;
         var r = 0;
-        if (len > 8) {
+        if (listyItems.length > 8) {
             for (var k = 0; k < 8; k++) {
                 if (listyItems[k].innerHTML == element.innerHTML) {
                     listyItems[k].remove();
@@ -69,8 +69,7 @@
                 }
             }
             if (r == 0) {
-                i = Math.floor((Math.random() * 9) + 0);
-                listyItems[i].remove();
+                listyItems[0].remove();
             }
         }
         document.getElementById('target').appendChild(element)
