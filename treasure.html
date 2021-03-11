@@ -61,7 +61,20 @@
             ];
             
     var clickCount = 0;
-     var treasureLocation = 18;
+     //var treasureLocation = 18;
+     var treasureLocation = getRandomIntInclusive(0, 24);
+
+     function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function newGame() {
+        var clickCount = 0;
+        var treasureLocation = getRandomIntInclusive(0, 24);
+    }
+
      
 function makeGuess(position){
 
